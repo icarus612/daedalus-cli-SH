@@ -1,29 +1,18 @@
 #!/usr/bin/env bash
 
 crs() {
+	local current_dir=$(pwd)
+
 	case $1 in 
 		fly)
-			source ./.daedalus.sh
+			source $current_dir/.daedalus.sh
 			;;
 		crun)
 			g++ $2.cpp -o $2.out && ./$2.out
 			;;
 		gpush)
-
-			local msg="updated"
-			if [ $# -gt 1 ]
-				then
-					msg=$2
-			fi
-			echo "Adding commit files."
-			git add .
-			echo "Committing"
-			echo "Commit Message:"
-			echo $msg
-			git commit -m $msg
-			echo "Pushing..."
-			git push
-			echo "Done"
+				$current_dir/bash_scripts/git.sh
+				gpush
 			;;
 		*)
 			echo "Command '$1' not found. \n"
