@@ -15,9 +15,15 @@ crs() {
 				then
 					msg=$2
 			fi
-			
+			echo "Adding commit files."
+			git add .
+			echo "Committing"
+			echo "Commit Message:"
 			echo $msg
-			git add . && git commit -m $msg && git push
+			git commit -m $msg
+			echo "Pushing..."
+			git push
+			echo "Done"
 			;;
 		*)
 			echo "Command '$1' not found. \n"
