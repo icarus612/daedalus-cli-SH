@@ -11,10 +11,9 @@ crs() {
 		gpush)
 
 			local msg="updated"
-			echo $#
 			if [ $# -gt 1 ]
 				then
-					$msg=$2
+					msg=$2
 			fi
 			
 			echo $msg
