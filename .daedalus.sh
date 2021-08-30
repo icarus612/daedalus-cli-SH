@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-crs() {
+ddls() {
 	local current_dir=$(pwd)
 
 	case $1 in 
@@ -12,7 +12,8 @@ crs() {
 			;;
 		gpush)
 				chmod +x $current_dir/bash_scripts/git.sh
-				$current_dir/bash_scripts/git.sh && gpush
+				$current_dir/bash_scripts/git/gpush.sh
+				exit
 			;;
 		*)
 			echo "Command '$1' not found. \n"
