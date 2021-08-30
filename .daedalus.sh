@@ -12,8 +12,7 @@ crs() {
 			;;
 		gpush)
 				chmod +x $current_dir/bash_scripts/git.sh
-				source $current_dir/bash_scripts/git.sh
-				gpush
+				$current_dir/bash_scripts/git.sh && gpush
 			;;
 		*)
 			echo "Command '$1' not found. \n"
