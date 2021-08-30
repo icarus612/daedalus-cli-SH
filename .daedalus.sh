@@ -11,7 +11,8 @@ crs() {
 			g++ $2.cpp -o $2.out && ./$2.out
 			;;
 		gpush)
-				$current_dir/bash_scripts/git.sh
+				chmod +x $current_dir/bash_scripts/git.sh
+				source $current_dir/bash_scripts/git.sh
 				gpush
 			;;
 		*)
